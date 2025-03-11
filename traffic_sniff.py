@@ -4,7 +4,7 @@
 #   protocols, requests with malformed packets, or requests to known malicious sites. 
 #   The program also writes to a local log .txt file how many inspections it has completed 
 #   and how many instances of suspicious activity found. 
-# This code requires scapy to be run with elevated privileges (on Linux/macOS, run as sudo to access raw sockets).
+
 
 import os
 import json

@@ -80,7 +80,6 @@ def check_flagged_site(result_dict):
     return None
 
 
-# Function to send alert message
 def send_alert(event_description, packet):
     alert_data = {
         "timestamp": datetime.now().strftime('%Y-%m-%dT%H:%M:%S'),
@@ -98,7 +97,6 @@ def send_alert(event_description, packet):
         print(f"Error sending alert: {e}")
 
 
-# Function to log activity to a file
 def log_activity(file_path, suspicious_packet=False):
     """
     Updates local log file. Always adds 1 to inspection count.
@@ -114,7 +112,7 @@ def log_activity(file_path, suspicious_packet=False):
         with open(file_path, 'w') as file:
             file.write(line1 + "\n" + line2)
     
-    # Get counts
+    # Get current counts
     with open(file_path, 'r') as file:
         lines = file.readlines()  
         line1_parts = lines[0].split(":")  
@@ -161,17 +159,14 @@ def main():
         result_dict['Raw'] = packet.summary()
 
         event_msg = ''
-        # Check for unsafe protocols
         unsafe_protocol = check_unsafe_protocol(result_dict)
         if unsafe_protocol:
             event_msg += unsafe_protocol + ' '
 
-        # Check for malformed packets
         malformed_packet = check_malformed_packet(result_dict)
         if malformed_packet:
             event_msg += malformed_packet + ' '
 
-        # Check if a flagged site is accessed
         flagged_site = check_flagged_site(result_dict)
         if flagged_site:
             event_msg += flagged_site + ' '
@@ -182,7 +177,6 @@ def main():
             packet_str = f"{result_dict}"
             send_alert(event_msg, packet_str)
         else:
-            # Update log to add 1 just to inspected
             print('safe')
             log_activity(log_file)
 

@@ -13,9 +13,9 @@ To deploy this project, the following is required:
 
 1. Install the following necessary Python libraries (if not already installed):
 
-    For 
+    For network packet sniffing:
     ```bash
-      $ pip install 
+      $ pip install scapy
     ```
 
 2. Create credentials file, credentials.py, and include the following data in string format:
@@ -27,4 +27,6 @@ To deploy this project, the following is required:
 
 ## References and Acknowledgements
 
+[1] guedou GreHack, “Scapy in 0x30 Minutes Slides,” Github.io, 2022. https://guedou.github.io/talks/2022_GreHack/Scapy%20in%200x30%20minutes.slides.html#/ (accessed Mar. 08, 2025).
 
+[2] L. Balaraman, “Packet Sniffing Using Scapy,” GeeksforGeeks, Jul. 01, 2021. https://www.geeksforgeeks.org/packet-sniffing-using-scapy/ (accessed Mar. 08, 2025).

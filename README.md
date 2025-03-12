@@ -20,9 +20,10 @@ To deploy this project, the following is required:
 
 2. Create credentials file, credentials.py, and include the following data in string format:
   
-    1. url_notify = URL to notify network owner.
-
-
+    ```
+       url_notify = URL to notify network owner.
+        flaged_ips = ["<ip of website>"]
+    ```    
 
 
 ## References and Acknowledgements

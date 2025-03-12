@@ -22,7 +22,7 @@ To deploy this project, the following is required:
   
     ```
        url_notify = URL to notify network owner.
-        flaged_ips = ["<ip of website>"]
+       flaged_ips = ["<ip of website>"]
     ```    
 
 
